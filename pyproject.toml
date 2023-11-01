@@ -4,9 +4,16 @@ authors = [
     {name = "Ricardo Mota", email = "ricardo@noa.one"},
 ]
 description = "Python wrapper for the ZSG binary"
-readnme = "README.md"
-license = {name = "MIT", url = "https://opensource.org/licenses/MIT"}
-version = "1.0.0"
+readme = "README.md"
+dynamic = ["version"]
+requires-python = "~=3.7"
+dependencies = [
+    "pyserial",
+    "requests",
+    "click",
+    "pylink-square",
+    "ppk2-api",
+]
 
 [build-system]
 requires = [
@@ -21,7 +28,7 @@ build-backend = "setuptools.build_meta"
 include = ["pyZSG*"]
 
 [tool.setuptools_scm]
-write_to = "pyZSG/VERSION"
+write_to = "pyZSG/version.py"
 
 [project.scripts]
-snakey = "pyZSG:__main__.main"
+pyZSG = "pyZSG:__main__.main"
